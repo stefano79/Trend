@@ -333,14 +333,14 @@ class Scope extends JPanel implements MouseListener, MouseMotionListener {
 		String text;
 		String textDelta;
 		if (pen.getUnits().length() > 0) {
-			text = pen.getName() + " " + Double.toString(penValue) + " "
+			text = pen.getName() + " " + String.format("%.2f", penValue)
 					+ pen.getUnits();
-			textDelta = "Delta-" + pen.getName() + " "
-					+ Double.toString(penValueDelta) + " " + pen.getUnits();
+			textDelta = "Delta " + pen.getName() + " "
+					+ String.format("%.2f", penValueDelta) + " " + pen.getUnits();
 		} else {
-			text = pen.getName() + " " + Double.toString(penValue);
-			textDelta = "Delta-" + pen.getName() + " "
-					+ Double.toString(penValueDelta);
+			text = pen.getName() + " " + String.format("%.2f", penValue);
+			textDelta = "Delta " + pen.getName() + " "
+					+ String.format("%.2f", penValueDelta);
 		}
 
 		int textWidth = metrics.stringWidth(text);
